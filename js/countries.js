@@ -18,12 +18,12 @@ const displayCountries = (countries) => {
     const code = country.cca2;
     // console.log(code);
     // console.log(name);
+    // distracturing ui
+
     div.innerHTML = `
-                <img src=${flag}>
+                
                  <h1>Name: ${name}</h1>
-                <h3>Capital: ${Capital}</h3>
-                <h3>Continents: ${continents}</h3>
-                <p>Population: ${population}</p>
+                
                 <button onclick="loadDetails('${code}')" type="">Details</button>
 
          `;
@@ -39,6 +39,25 @@ const loadDetails = (code) => {
 };
 
 const displayDetails = (details) => {
-  console.log(details.name.common);
+  const getDetailsContainer = document.getElementById("details-container");
+
+  // distructuring
+  const flag = details.flags.png;
+  const name = details.name.common;
+  const Capital = details.capital;
+  const continents = details.continents;
+  const population = details.population;
+  // set ui
+
+  getDetailsContainer.innerHTML = `
+                <img src=${flag}>
+                 <h1>Name: ${name}</h1>
+                <h3>Capital: ${Capital}</h3>
+                <h3>Continents: ${continents}</h3>
+                <p>Population: ${population}</p>
+                
+
+         `;
+  // console.log(details.name.common);
 };
 loadCountries();
