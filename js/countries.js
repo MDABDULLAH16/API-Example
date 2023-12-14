@@ -24,7 +24,7 @@ const displayCountries = (countries) => {
                 
                  <h1>Name: ${name}</h1>
                 
-                <button onclick="loadDetails('${code}')" type="">Details</button>
+                <button class ='button-73' onclick="loadDetails('${code}')" type="">Details</button>
 
          `;
     countriesContainer.appendChild(div);
